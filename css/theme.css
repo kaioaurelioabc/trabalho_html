@@ -1,0 +1,182 @@
+/* =========================================
+   TEMAS — escuro (padrão do app), claro e automático.
+   Carregado depois de style.css. O tema é definido pelo
+   atributo data-theme no <html> (veja js/theme.js).
+========================================= */
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0d14;
+  --surface: #121622;
+  --surface2: #171c2a;
+  --border: #252b3b;
+  --text: #f3f4fa;
+  --muted: #9299ad;
+  --purple: #9b83ff;
+  --font: 'DM Sans', 'Segoe UI', sans-serif;
+  --display: 'Space Grotesk', 'Segoe UI', sans-serif;
+
+  --field-bg: #0e121d;
+  --field-border: #303748;
+  --card: #171c29;
+  --card-border: #252b3a;
+  --modal-bg: #151a27;
+  --accent: #8d78ef;
+  --accent-soft: #292442;
+  --accent-ink: #c3b5ff;
+  --ink-2: #c9cede;
+  --danger: #ff929e;
+  --danger-soft: #46282e;
+  --success: #9ce5bd;
+}
+
+html[data-theme="light"] {
+  color-scheme: only light;   /* "only": o navegador não pode escurecer a página à força */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface2: #f5f6fb;
+  --border: #e0e3ef;
+  --text: #1b1f33;
+  --muted: #5c647a;
+  --purple: #6d54e0;
+
+  --field-bg: #f6f7fc;
+  --field-border: #d7dbea;
+  --card: #f8f8fd;
+  --card-border: #e0e3ef;
+  --modal-bg: #ffffff;
+  --accent: #8d78ef;
+  --accent-soft: #ece8ff;
+  --accent-ink: #5a43d6;
+  --ink-2: #3b4259;
+  --danger: #c43a4e;
+  --danger-soft: #fde4e7;
+  --success: #1f7a52;
+}
+
+html { background: var(--bg); }
+
+/* Durante a troca de tema, nada anima: a tela muda inteira de uma vez */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
+/* Corrige o botão secundário (era branco com texto claro) nos dois temas */
+.secondary-button {
+  background: transparent;
+  border: 1px solid var(--field-border);
+  color: var(--muted);
+}
+.secondary-button:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Perfil da barra lateral vira link para a persona */
+a.profile {
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+a.profile:hover { background: var(--accent-soft); }
+.avatar { flex-shrink: 0; }
+a.avatar-link { text-decoration: none; }
+
+/* Botão de abrir detalhes na tarefa */
+.task-info[data-action="open"] { cursor: pointer; }
+.task-info[data-action="open"]:hover .task-title { color: var(--accent-ink); }
+.task-info:focus-visible,
+.open-task:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.open-task {
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: #777f93;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.open-task:hover { color: var(--accent-ink); }
+
+/* =========================================
+   TEMA CLARO — substitui as cores fixas do style.css
+========================================= */
+
+html[data-theme="light"] .sidebar { background: #ffffff; }
+html[data-theme="light"] .side-label,
+html[data-theme="light"] .eyebrow { color: #7a8199; }
+html[data-theme="light"] .nav-link:hover,
+html[data-theme="light"] .nav-link.active { background: #ece8ff; color: #5a43d6; }
+html[data-theme="light"] .tip-card { border-color: #d9d2ff; background: linear-gradient(145deg, #f1edff, #faf9ff); }
+html[data-theme="light"] .tip-icon { color: #6d54e0; }
+
+html[data-theme="light"] .welcome-row {
+  border-color: #d9d2ff;
+  background: radial-gradient(ellipse at 85% 50%, #e4dcff 0%, #f1edff 40%, #fafaff 80%);
+}
+html[data-theme="light"] .accent,
+html[data-theme="light"] .welcome-row h2 span { color: #6d54e0; }
+html[data-theme="light"] .orbit { border-color: #b9acf0; }
+
+html[data-theme="light"] .purple { background: #e9e4ff; color: #5a43d6; }
+html[data-theme="light"] .green { background: #d9f4e8; color: #1f8f5c; }
+html[data-theme="light"] .cyan { background: #d8f0f5; color: #17788a; }
+html[data-theme="light"] .orange { background: #fbe9d2; color: #b36b12; }
+html[data-theme="light"] .stat-card > small { color: #7a8199; }
+html[data-theme="light"] .progress-track { background: #e4e7f2; }
+
+html[data-theme="light"] .filter-btn.active { background: #ece8ff; color: #5a43d6; }
+html[data-theme="light"] .task-count { color: #7a8199; }
+html[data-theme="light"] .task-item { border-color: var(--card-border); background: var(--card); }
+html[data-theme="light"] .task-check { border-color: #aab0c4; }
+html[data-theme="light"] .task-item.is-done .task-title { color: #8a91a5; }
+html[data-theme="light"] .task-meta { color: #6b7389; }
+html[data-theme="light"] .priority-alta { background: #fde4e7; color: #c43a4e; }
+html[data-theme="light"] .priority-média { background: #fbf0d3; color: #8f6a10; }
+html[data-theme="light"] .priority-baixa { background: #d9f4e8; color: #1f7a52; }
+html[data-theme="light"] .delete-task,
+html[data-theme="light"] .open-task { color: #8a91a5; }
+html[data-theme="light"] .empty-state strong { color: #2b3050; }
+html[data-theme="light"] .panel-symbol { color: #6d54e0; }
+html[data-theme="light"] .empty-state > span { color: #6d54e0; }
+html[data-theme="light"] .study-heading > span:last-child { color: #6b7389; }
+html[data-theme="light"] .small-copy { color: var(--muted); }
+html[data-theme="light"] .study-note { border-color: #d9d2ff; background: #f1edff; }
+html[data-theme="light"] .study-note > span { color: #6d54e0; }
+html[data-theme="light"] .study-note p { color: #555d78; }
+html[data-theme="light"] .study-note strong { color: #3b2f8f; }
+html[data-theme="light"] footer { color: #8a91a5; }
+
+html[data-theme="light"] .modal-backdrop { background: #1b1f3388; }
+html[data-theme="light"] .modal { background: var(--modal-bg); border-color: var(--border); box-shadow: 0 20px 70px #1b1f3340; }
+html[data-theme="light"] .icon-button { color: #6b7389; }
+html[data-theme="light"] .modal form label { color: var(--ink-2); }
+html[data-theme="light"] .modal input,
+html[data-theme="light"] .modal select { background: var(--field-bg); border-color: var(--field-border); color: var(--text); }
+html[data-theme="light"] .toast { background: #e6f6ee; border-color: #a9dcc3; color: #1f7a52; }
+
+/* Espaçamento do rótulo "CONTA" na barra lateral */
+.side-label-gap { padding-top: 22px; }
+
+/* Fundo branco: cartões ganham uma sombra leve para continuarem destacados */
+html[data-theme="light"] .stat-card,
+html[data-theme="light"] .panel,
+html[data-theme="light"] .card,
+html[data-theme="light"] .login-container {
+  box-shadow: 0 1px 3px rgba(27, 31, 51, 0.05);
+}
+html[data-theme="light"] .sidebar { border-right-color: var(--border); }
+
+/* Janela de código e erros de formulário também seguem o tema claro */
+html[data-theme="light"] .code-window {
+  border-color: #d9d2ff;
+  background: #ffffff;
+  color: #3b4259;
+  box-shadow: 0 15px 35px rgba(109, 84, 224, 0.18);
+}
+html[data-theme="light"] .window-dots { color: #6d54e0; }
+html[data-theme="light"] .code-window b { color: #6d54e0; }
+html[data-theme="light"] .code-window em { color: #1f8f5c; }
+html[data-theme="light"] .form-error { color: var(--danger); }

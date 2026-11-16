@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="darkreader-lock">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevTrack - organize seus estudos e acompanhe sua evolução na programação.">
+  <title>DevTrack | Seu espaço de evolução</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/details.css">
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script>Auth.requireAuth(); Theme.syncAccount();</script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/files.js" defer></script>
+  <script src="js/tasks.js" defer></script>
+  <script src="js/details.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="DevTrack início"><span class="brand-mark">&lt;/&gt;</span><span>DevTrack</span></a>
+      <div class="side-label">ESPAÇO DE TRABALHO</div>
+      <nav class="navigation" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio" data-section="inicio"><span>▦</span> Visão geral</a>
+        <a class="nav-link" href="#tarefas" data-section="tarefas"><span>✓</span> Minhas tarefas</a>
+        <a class="nav-link" href="#estudos" data-section="estudos"><span>⌘</span> Trilhas de estudo</a>
+      </nav>
+      <div class="side-label side-label-gap">CONTA</div>
+      <nav class="navigation" aria-label="Conta">
+        <a class="nav-link" href="persona.html"><span>⚙</span> Persona</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="tip-card"><span class="tip-icon">✦</span><strong>Pequenos passos.</strong><p>Consistência hoje, evolução amanhã.</p></div>
+        <a class="profile" href="persona.html" aria-label="Abrir configurações da persona"><div class="avatar" data-avatar>A</div><div><strong id="profileName">Meu espaço</strong><small>Estudante de tecnologia</small></div></a>
+      </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        <div><span class="eyebrow">SEU PAINEL</span><h1>Visão geral</h1></div>
+        <div class="topbar-right"><span class="date-chip" id="todayLabel"></span><a class="avatar avatar-small avatar-link" href="persona.html" data-avatar aria-label="Abrir configurações da persona">A</a></div>
+      </header>
+
+      <section class="welcome-row">
+        <div><p class="eyebrow accent" id="welcomeEyebrow">OLÁ, DEV 👋</p><h2>Continue construindo<br><span>seu próximo nível.</span></h2><p class="muted">Organize suas tarefas, acompanhe seus estudos e celebre cada conquista.</p></div>
+        <div class="welcome-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="code-window"><span class="window-dots">● ● ●</span><code><b>const</b> progresso = <em>100%</em>;<br><b>while</b> (aprendendo) {<br>&nbsp;&nbsp; evoluir();<br>}</code></div></div>
+      </section>
+
+      <section class="stats-grid" aria-label="Resumo de atividades">
+        <article class="stat-card"><div class="stat-top"><span>Tarefas cadastradas</span><span class="stat-icon purple">▤</span></div><strong id="totalTasks">0</strong><small>Total no seu planejamento</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Concluídas</span><span class="stat-icon green">✓</span></div><strong id="completedTasks">0</strong><small>Passos já realizados</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Em andamento</span><span class="stat-icon cyan">◷</span></div><strong id="pendingTasks">0</strong><small>Próximos passos</small></article>
+        <article class="stat-card progress-stat"><div class="stat-top"><span>Seu progresso</span><span class="stat-icon orange">↗</span></div><strong id="progressPercent">0%</strong><div class="progress-track"><span id="progressBar"></span></div><small>Das tarefas concluídas</small></article>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel tasks-panel" id="tarefas">
+          <div class="panel-heading"><div><span class="eyebrow">PRODUTIVIDADE</span><h3>Minhas tarefas</h3></div><button class="primary-button" id="openTaskModal">＋ Nova tarefa</button></div>
+          <div class="task-toolbar"><div class="filter-tabs" role="group" aria-label="Filtrar tarefas"><button class="filter-btn active" data-filter="all">Todas</button><button class="filter-btn" data-filter="pending">Pendentes</button><button class="filter-btn" data-filter="done">Concluídas</button></div><span class="task-count" id="taskCount">0 tarefas</span></div>
+          <div class="task-list" id="taskList"><div class="empty-state"><span>✦</span><strong>Seu planejamento começa aqui</strong><p>Adicione uma tarefa para organizar sua rotina.</p></div></div>
+        </div>
+
+        <div class="panel study-panel" id="estudos">
+          <div class="panel-heading"><div><span class="eyebrow">DESENVOLVIMENTO</span><h3>Trilhas de estudo</h3></div><span class="panel-symbol">⌘</span></div>
+          <p class="muted small-copy">Acompanhe as áreas que você está desenvolvendo.</p>
+          <div class="study-list" id="studyList">
+            <div class="study-item"><div class="study-heading"><span class="language-dot html-dot"></span><strong>HTML & CSS</strong><span>65%</span></div><div class="progress-track"><span style="width:65%"></span></div></div>
+            <div class="study-item"><div class="study-heading"><span class="language-dot js-dot"></span><strong>JavaScript</strong><span>35%</span></div><div class="progress-track"><span style="width:35%"></span></div></div>
+            <div class="study-item"><div class="study-heading"><span class="language-dot db-dot"></span><strong>Banco de Dados</strong><span>20%</span></div><div class="progress-track"><span style="width:20%"></span></div></div>
+            <div class="study-item"><div class="study-heading"><span class="language-dot git-dot"></span><strong>Git & GitHub</strong><span>50%</span></div><div class="progress-track"><span style="width:50%"></span></div></div>
+          </div>
+          <div class="study-note"><span>✧</span><p><strong>Dica de evolução</strong><br>Reserve um tempo todos os dias para praticar. A prática transforma conhecimento em habilidade.</p></div>
+        </div>
+      </section>
+      <footer>Feito para aprender, praticar e evoluir. <span>DevTrack © 2026</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="taskModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><div><span class="eyebrow accent">NOVO OBJETIVO</span><h3 id="modalTitle">Adicionar tarefa</h3></div><button class="icon-button" id="closeTaskModal" aria-label="Fechar">×</button></div>
+      <form id="taskForm" novalidate>
+        <label for="taskTitle">Nome da tarefa</label><input id="taskTitle" name="title" type="text" maxlength="70" placeholder="Ex.: Estudar funções em JavaScript" required>
+        <div class="form-row"><div><label for="taskCategory">Categoria</label><select id="taskCategory" name="category"><option value="Programação">Programação</option><option value="Faculdade">Faculdade</option><option value="Inglês">Inglês</option><option value="Pessoal">Pessoal</option></select></div><div><label for="taskPriority">Prioridade</label><select id="taskPriority" name="priority"><option value="Baixa">Baixa</option><option value="Média" selected>Média</option><option value="Alta">Alta</option></select></div></div>
+        <label for="taskDate">Prazo (opcional)</label><input id="taskDate" name="date" type="date">
+        <p class="form-error" id="formError" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="secondary-button" id="cancelTask">Cancelar</button><button type="submit" class="primary-button">Salvar tarefa</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
+    <section class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="detailHeading">
+      <div class="modal-heading">
+        <div><span class="eyebrow accent">DETALHES DA TAREFA</span><h3 id="detailHeading">Tarefa</h3></div>
+        <div class="detail-actions"><span class="save-state" id="saveState" role="status" aria-live="polite"></span><button class="icon-button" id="closeDetail" aria-label="Fechar">×</button></div>
+      </div>
+      <div class="detail-body">
+        <label for="detailTitle">Nome</label>
+        <input id="detailTitle" type="text" maxlength="70">
+        <div class="form-row three">
+          <div><label for="detailCategory">Categoria</label><select id="detailCategory"><option value="Programação">Programação</option><option value="Faculdade">Faculdade</option><option value="Inglês">Inglês</option><option value="Pessoal">Pessoal</option></select></div>
+          <div><label for="detailPriority">Prioridade</label><select id="detailPriority"><option value="Baixa">Baixa</option><option value="Média">Média</option><option value="Alta">Alta</option></select></div>
+          <div><label for="detailDate">Prazo</label><input id="detailDate" type="date"></div>
+        </div>
+        <label for="detailNotes">Anotações</label>
+        <textarea id="detailNotes" placeholder="Escreva aqui tudo o que quiser sobre esta tarefa: resumos, ideias, links, passos..."></textarea>
+        <div class="attach-head"><label for="fileInput">Arquivos e imagens</label><span id="attachCount"></span></div>
+        <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Adicionar arquivos">
+          <span class="drop-icon">⇪</span>
+          <strong>Arraste arquivos aqui ou clique para escolher</strong>
+          <span>PDF, Word, Excel, PowerPoint, imagens e qualquer outro arquivo (até 50 MB cada)</span>
+        </div>
+        <input id="fileInput" type="file" multiple hidden>
+        <ul class="file-list" id="fileList"></ul>
+      </div>
+      <div class="modal-actions"><button type="button" class="primary-button" id="doneDetail">Concluir</button></div>
+    </section>
+  </div>
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer-bar"><strong id="viewerName"></strong><button type="button" class="primary-button" id="viewerDownload">Baixar</button><button type="button" class="icon-button" id="closeViewer" aria-label="Fechar visualização">×</button></div>
+    <div class="viewer-body" id="viewerBody"></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+ 

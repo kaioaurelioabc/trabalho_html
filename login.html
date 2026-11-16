@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="darkreader-lock">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | DevTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script>Auth.redirectIfLogged();</script>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="login.html" class="brand-info" aria-label="DevTrack">
+            <span class="brand-mark">&lt;/&gt;</span>
+            <span>DevTrack</span>
+        </a>
+        <div class="header-right">
+            <a href="cadastro.html" class="btn-register">Criar conta</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="login-container">
+            <h2>Entrar na Conta</h2>
+            <p class="subtitle">Use seu e-mail e senha para continuar.</p>
+
+            <form id="loginForm" novalidate>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="seu@gmail.com" autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required placeholder="Sua senha" autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Entrar</button>
+                <p id="errorMessage" class="error-message" role="alert"></p>
+            </form>
+
+            <p class="switch-link">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

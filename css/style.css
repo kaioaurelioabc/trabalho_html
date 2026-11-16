@@ -1,0 +1,1049 @@
+/* =========================================
+   DEVTRACK — ESTILOS RESPONSIVOS MOBILE-FIRST
+========================================= */
+
+/* 1. VARIÁVEIS GLOBAIS */
+
+
+.btn-back{
+    background-color: rgb(255, 255, 255);
+    -webkit-text-size-adjust: auto;
+    color: rgb(247, 0, 0);
+    border: #eef0f8;
+    display: flex;
+    border-radius: 300px;
+    font-size: large;
+    border-left: 300px;
+    border: 300px;
+    flex: auto;
+display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #9b83ff, #5e9bff);
+  color: #fff;
+  font-size: 14px;
+
+}
+
+
+:root {
+  --bg: #0b0d14;
+  --surface: #121622;
+  --surface2: #171c2a;
+  --border: #252b3b;
+  --text: #f3f4fa;
+  --muted: #9299ad;
+  --purple: #9b83ff;
+  --cyan: #61d9e8;
+  --green: #64d9a0;
+  --font: 'DM Sans', sans-serif;
+  --display: 'Space Grotesk', sans-serif;
+}
+
+/* 2. RESET E CONFIGURAÇÕES GERAIS */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+/* 3. SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  width: 245px;
+  padding: 27px 18px;
+  background: #0e111a;
+  border-right: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 10px 43px;
+  color: var(--text);
+  font: 700 21px var(--display);
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #9b83ff, #5e9bff);
+  color: #fff;
+  font-size: 14px;
+}
+
+.side-label,
+.eyebrow {
+  color: #777f96;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.side-label {
+  padding: 0 11px 13px;
+}
+
+.navigation {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  border-radius: 9px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-link span {
+  width: 18px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #201e35;
+  color: #c2b5ff;
+}
+
+/* 4. SIDEBAR INFERIOR */
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.tip-card {
+  margin-bottom: 23px;
+  padding: 15px;
+  border: 1px solid #34304f;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #211d38, #171827);
+}
+
+.tip-icon {
+  color: #b4a2ff;
+  font-size: 18px;
+}
+
+.tip-card strong {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+.tip-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 5. PERFIL */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 5px 0;
+  border-top: 1px solid var(--border);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9d83ff, #53c6d8);
+  color: #10121b;
+  font-weight: 700;
+}
+
+.profile strong,
+.profile small {
+  display: block;
+}
+
+.profile strong {
+  font-size: 12px;
+}
+
+.profile small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* 6. CONTEÚDO PRINCIPAL */
+
+.main-content {
+  max-width: 1600px;
+  margin-left: 245px;
+  padding: 30px 4.2%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar h1 {
+  margin: 4px 0;
+  font: 600 23px var(--display);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.date-chip {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.avatar-small {
+  width: 32px;
+  height: 32px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* 7. BOAS-VINDAS */
+
+.welcome-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 205px;
+  margin: 33px 0 25px;
+  padding: 27px 32px;
+  overflow: hidden;
+  border: 1px solid #302c4a;
+  border-radius: 15px;
+  background: radial-gradient(
+    ellipse at 85% 50%,
+    #292348 0%,
+    #19192b 35%,
+    #151824 75%
+  );
+}
+
+.accent {
+  color: #a994ff;
+}
+
+.welcome-row h2 {
+  margin: 9px 0;
+  font: 600 clamp(25px, 3vw, 35px)/1.18 var(--display);
+}
+
+.welcome-row h2 span {
+  color: #b1a0ff;
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.welcome-row .muted {
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* 8. ILUSTRAÇÃO */
+
+.welcome-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 250px;
+  height: 145px;
+  flex-shrink: 0;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #6253a0;
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.orbit-one {
+  width: 220px;
+  height: 95px;
+}
+
+.orbit-two {
+  width: 180px;
+  height: 125px;
+  transform: rotate(40deg);
+}
+
+.code-window {
+  position: relative;
+  padding: 13px 18px;
+  border: 1px solid #484064;
+  border-radius: 10px;
+  background: #10131f;
+  box-shadow: 0 15px 35px #08081088;
+  font: 11px/1.9 monospace;
+  color: #d4d0ed;
+  transform: rotate(-4deg);
+}
+
+.window-dots {
+  display: block;
+  margin-bottom: 7px;
+  color: #9b83ff;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.code-window b {
+  color: #c2a8ff;
+}
+
+.code-window em {
+  color: #69ddb1;
+  font-style: normal;
+}
+
+/* 9. ESTATÍSTICAS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 19px;
+}
+
+.stat-card,
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.stat-card {
+  padding: 17px;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.purple {
+  background: #2b2548;
+  color: #b5a1ff;
+}
+
+.green {
+  background: #1b3b34;
+  color: #6fe0ad;
+}
+
+.cyan {
+  background: #193a43;
+  color: #70dbea;
+}
+
+.orange {
+  background: #423322;
+  color: #f0b66c;
+}
+
+.stat-card > strong {
+  display: block;
+  margin: 12px 0 3px;
+  font: 600 27px var(--display);
+}
+
+.stat-card > small {
+  color: #777f93;
+  font-size: 10px;
+}
+
+/* 10. PROGRESSO */
+
+.progress-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #292e3d;
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #8e79f5, #61d9e8);
+  transition: width 0.3s;
+}
+
+.progress-stat .progress-track {
+  margin: 9px 0 7px;
+}
+
+/* 11. GRID DE CONTEÚDO */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 1fr);
+  gap: 17px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 20px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-heading h3,
+.modal-heading h3 {
+  margin: 5px 0 0;
+  font: 600 18px var(--display);
+}
+
+/* 12. BOTÕES */
+
+.primary-button,
+.secondary-button {
+  padding: 10px 13px;
+  border: 0;
+  border-radius: 8px;
+  font: 600 11px var(--font);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-button {
+  background: #8d78ef;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #a18fff;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  background: #ffffff;
+  color: #c4c9d6;
+}
+
+/* 13. FILTROS DE TAREFAS */
+
+.task-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 21px 0 11px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-btn {
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: 500 10px var(--font);
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #292442;
+  color: #c3b5ff;
+}
+
+.task-count {
+  color: #747c90;
+  font-size: 10px;
+}
+
+/* 14. LISTA DE TAREFAS */
+
+.task-list {
+  display: grid;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  border: 1px solid #252b3a;
+  border-radius: 9px;
+  background: #171c29;
+}
+
+.task-check {
+  position: relative;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  appearance: none;
+  border: 1px solid #626b80;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-check:checked {
+  background: #8d78ef;
+  border-color: #8d78ef;
+}
+
+.task-check:checked:after {
+  position: absolute;
+  top: -1px;
+  left: 3px;
+  color: #fff;
+  font-size: 12px;
+  content: '✓';
+}
+
+.task-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.task-item.is-done .task-title {
+  color: #7e8799;
+  text-decoration: line-through;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 6px;
+  color: #858da0;
+  font-size: 9px;
+}
+
+/* 15. PRIORIDADES */
+
+.priority {
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.priority-alta {
+  background: #46282e;
+  color: #ff9ca6;
+}
+
+.priority-média {
+  background: #403722;
+  color: #e9c27b;
+}
+
+.priority-baixa {
+  background: #1d3b34;
+  color: #78d7ac;
+}
+
+/* 16. EXCLUIR E ESTADO VAZIO */
+
+.delete-task {
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #777f93;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.delete-task:hover {
+  color: #ff8b9a;
+}
+
+.empty-state {
+  padding: 35px 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-state > span {
+  color: #a994ff;
+  font-size: 23px;
+}
+
+.empty-state strong {
+  display: block;
+  margin: 8px 0 4px;
+  color: #d8dbea;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 11px;
+}
+
+/* 17. PAINEL DE ESTUDOS */
+
+.panel-symbol {
+  color: #b2a1ff;
+  font-size: 23px;
+}
+
+.small-copy {
+  margin: 8px 0 22px;
+  font-size: 11px;
+}
+
+.study-list {
+  display: grid;
+  gap: 19px;
+}
+
+.study-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.study-heading strong {
+  flex: 1;
+  font-size: 11px;
+}
+
+.study-heading > span:last-child {
+  color: #929ab0;
+  font-size: 10px;
+}
+
+/* 18. CORES DAS LINGUAGENS */
+
+.language-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.html-dot {
+  background: #e68d68;
+}
+
+.js-dot {
+  background: #e8ca67;
+}
+
+.db-dot {
+  background: #6cb8e8;
+}
+
+.git-dot {
+  background: #a68df4;
+}
+
+.study-item:nth-child(1) .progress-track span {
+  background: #e68d68;
+}
+
+.study-item:nth-child(2) .progress-track span {
+  background: #e8ca67;
+}
+
+.study-item:nth-child(3) .progress-track span {
+  background: #6cb8e8;
+}
+
+.study-item:nth-child(4) .progress-track span {
+  background: #a68df4;
+}
+
+/* 19. DICA DE ESTUDO */
+
+.study-note {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 12px;
+  border: 1px solid #34304f;
+  border-radius: 9px;
+  background: #201e34;
+}
+
+.study-note > span {
+  color: #b7a4ff;
+  font-size: 17px;
+}
+
+.study-note p {
+  margin: 0;
+  color: #a7a8bb;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.study-note strong {
+  color: #ded8ff;
+}
+
+/* 20. RODAPÉ */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 2px;
+  color: #626b7e;
+  font-size: 10px;
+}
+
+/* 21. MODAL */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  background: #05060bc9;
+}
+
+.modal-backdrop.open {
+  display: grid;
+}
+
+.modal {
+  width: min(100%, 440px);
+  padding: 23px;
+  border: 1px solid #353b4d;
+  border-radius: 15px;
+  background: #151a27;
+  box-shadow: 0 20px 70px #0009;
+}
+
+.modal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.icon-button {
+  border: 0;
+  background: transparent;
+  color: #9da4b5;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* 22. FORMULÁRIO DO MODAL */
+
+.modal form label {
+  display: block;
+  margin: 13px 0 7px;
+  color: #c9cede;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 11px;
+  outline: none;
+  border: 1px solid #303748;
+  border-radius: 8px;
+  background: #0e121d;
+  color: #eef0f8;
+  font: 12px var(--font);
+}
+
+.modal input:focus,
+.modal select:focus {
+  border-color: #9b83ff;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-error {
+  min-height: 14px;
+  color: #ff929e;
+  font-size: 11px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* 23. TOAST */
+
+.toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 20;
+  padding: 12px 17px;
+  border: 1px solid #356352;
+  border-radius: 9px;
+  background: #202b2b;
+  color: #9ce5bd;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   24. TELAS GRANDES
+========================================= */
+
+@media (min-width: 1500px) {
+  .main-content {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+/* =========================================
+   25. TABLETS
+========================================= */
+
+@media (max-width: 1050px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .study-panel {
+    min-height: 300px;
+  }
+}
+
+/* =========================================
+   26. CELULARES
+========================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: 260px;
+    box-shadow: 15px 0 35px #0005;
+    transform: translateX(-100%);
+    transition: transform 0.25s;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-right: 10px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  .topbar {
+    justify-content: flex-start;
+  }
+
+  .topbar > div:nth-child(2) {
+    flex: 1;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+
+  .date-chip {
+    display: none;
+  }
+
+  .welcome-row {
+    min-height: 175px;
+    margin-top: 24px;
+    padding: 23px 20px;
+  }
+
+  .welcome-art {
+    width: 125px;
+    margin-right: -20px;
+    transform: scale(0.75);
+  }
+
+  .welcome-row h2 {
+    font-size: 25px;
+  }
+
+  .welcome-row .muted {
+    max-width: 280px;
+    font-size: 11px;
+  }
+
+  .stats-grid {
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 13px;
+  }
+
+  .stat-top {
+    font-size: 10px;
+  }
+
+  .stat-card > strong {
+    font-size: 24px;
+  }
+
+  .content-grid {
+    gap: 12px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .panel-heading h3 {
+    font-size: 16px;
+  }
+
+  .primary-button {
+    padding: 9px 10px;
+  }
+
+  .task-toolbar {
+    margin-top: 16px;
+  }
+
+  .filter-btn {
+    padding: 7px 8px;
+  }
+
+  footer {
+    gap: 10px;
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   27. CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 390px) {
+  .welcome-art {
+    display: none;
+  }
+
+  .welcome-row h2 {
+    font-size: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-card > strong {
+    font-size: 22px;
+  }
+
+  .panel-heading .primary-button {
+    font-size: 10px;
+  }
+
+  .task-meta {
+    font-size: 8px;
+  }
+}

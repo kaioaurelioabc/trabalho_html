@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="darkreader-lock">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta | DevTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script>Auth.redirectIfLogged();</script>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="login.html" class="brand-info" aria-label="DevTrack">
+            <span class="brand-mark">&lt;/&gt;</span>
+            <span>DevTrack</span>
+        </a>
+        <div class="header-right">
+            <a href="login.html" class="btn-register">Já tenho conta</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="login-container">
+            <h2>Criar Conta</h2>
+            <p class="subtitle">Leva menos de um minuto.</p>
+
+            <form id="registerForm" novalidate>
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" required placeholder="Como quer ser chamado" autocomplete="name" maxlength="60">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="seu@gmail.com" autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required placeholder="Mínimo de 8 caracteres" autocomplete="new-password">
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirmar senha</label>
+                    <input type="password" id="confirmPassword" required placeholder="Repita a senha" autocomplete="new-password">
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Criar conta</button>
+                <p id="errorMessage" class="error-message" role="alert"></p>
+            </form>
+
+            <p class="switch-link">Já tem uma conta? <a href="login.html">Entrar</a></p>
+        </div>
+    </main>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

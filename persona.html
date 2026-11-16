@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="darkreader-lock">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona | DevTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="persona_style.css">
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script>Auth.requireAuth(); Theme.syncAccount();</script>
+</head>
+<body>
+
+    <header class="topo">
+        <a href="index.html" class="voltar">← Voltar ao painel</a>
+        <span class="marca"><span class="marca-icone">&lt;/&gt;</span> DevTrack</span>
+    </header>
+
+    <main class="container">
+
+        <section class="cabecalho">
+            <span class="eyebrow">CONTA</span>
+            <h1>Configuração da Persona</h1>
+            <p>Gerencie suas informações pessoais e a aparência do aplicativo.</p>
+        </section>
+
+        <!-- FOTO E NOME -->
+        <section class="card">
+            <h2>Informações pessoais</h2>
+
+            <div class="foto-container">
+                <div class="foto" id="fotoPerfil" role="img" aria-label="Foto de perfil">A</div>
+                <div class="foto-botoes">
+                    <label for="inputFoto" class="botao botao-roxo">Alterar foto</label>
+                    <button type="button" class="botao botao-contorno" id="removerFoto">Remover foto</button>
+                    <input type="file" id="inputFoto" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" maxlength="60" autocomplete="name">
+            </div>
+            <button type="button" class="botao botao-roxo" id="salvarNome">Salvar nome</button>
+            <p class="status" id="statusPerfil" role="status"></p>
+        </section>
+
+        <!-- E-MAIL -->
+        <section class="card">
+            <h2>E-mail</h2>
+            <div class="campo">
+                <label for="email">E-mail da conta</label>
+                <input type="email" id="email" placeholder="seu@gmail.com" autocomplete="email">
+            </div>
+            <div class="campo">
+                <label for="senhaEmail">Senha atual (para confirmar)</label>
+                <input type="password" id="senhaEmail" placeholder="Sua senha atual" autocomplete="current-password">
+            </div>
+            <button type="button" class="botao botao-roxo" id="salvarEmail">Salvar e-mail</button>
+            <p class="status" id="statusEmail" role="status"></p>
+        </section>
+
+        <!-- SENHA -->
+        <section class="card">
+            <h2>Senha</h2>
+            <div class="campo">
+                <label for="senhaAtual">Senha atual</label>
+                <input type="password" id="senhaAtual" placeholder="Senha atual" autocomplete="current-password">
+            </div>
+            <div class="campo">
+                <label for="novaSenha">Nova senha</label>
+                <input type="password" id="novaSenha" placeholder="Mínimo de 8 caracteres" autocomplete="new-password">
+            </div>
+            <div class="campo">
+                <label for="confirmarSenha">Confirmar nova senha</label>
+                <input type="password" id="confirmarSenha" placeholder="Repita a nova senha" autocomplete="new-password">
+            </div>
+            <button type="button" class="botao botao-roxo" id="salvarSenha">Alterar senha</button>
+            <p class="status" id="statusSenha" role="status"></p>
+        </section>
+
+        <!-- TEMA -->
+        <section class="card">
+            <h2>Aparência</h2>
+            <p class="descricao">Escolha o fundo do aplicativo. No modo automático ele segue o tema do seu aparelho.</p>
+            <div class="tema-opcoes" role="radiogroup" aria-label="Tema do aplicativo">
+                <label class="tema-opcao"><input type="radio" name="tema" value="light"><span>☀ Claro</span></label>
+                <label class="tema-opcao"><input type="radio" name="tema" value="dark"><span>☾ Escuro</span></label>
+                <label class="tema-opcao"><input type="radio" name="tema" value="auto"><span>◐ Automático</span></label>
+            </div>
+            <p class="status" id="statusTema" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- SAIR -->
+        <section class="card card-sair">
+            <div>
+                <h2>Sair da conta</h2>
+                <p class="descricao">Encerra a sessão neste navegador. Suas tarefas e arquivos continuam salvos.</p>
+            </div>
+            <button type="button" class="botao botao-perigo" id="sair">Sair</button>
+        </section>
+
+    </main>
+
+    <script src="persona.js"></script>
+</body>
+</html>
